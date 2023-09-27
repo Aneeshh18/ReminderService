@@ -8,7 +8,7 @@ const sendBasicEmail = async (mailFrom, mailTo, mailSubject, mailBody) => {
             subject: mailSubject,
             text: mailBody
         });
-        console.log(response);
+        // console.log(response);
     } catch (error) {
         console.log(error);
     }
