@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const { PORT } = require('./config/serverConfig');
+const { subscribeMessage, createChannel } = require('./utils/messageQueue');
 
 // const { sendBasicEmail } = require("./services/email-service");
 
@@ -13,6 +14,8 @@ const setupAndStartServer = async () => {
     const app = express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
+
+
 
     app.post('/api/v1/tickets', TicketController.create);
 
